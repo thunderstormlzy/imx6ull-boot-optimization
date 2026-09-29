@@ -1,0 +1,10 @@
+*.o
+*.ko
+*.dtb
+*.img
+*.bin
+zImage
+u-boot.imx
+rootfs/
+build/
+output/
