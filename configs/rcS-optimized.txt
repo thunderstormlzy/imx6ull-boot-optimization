@@ -1,0 +1,20 @@
+echo "BOOTMARK:USERSPACE_START uptime=$(cut -d' ' -f1 /proc/uptime)" > /dev/console
+#!/bin/sh
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:$PATH
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib
+export PATH LD_LIBRARY_PATH
+
+mount -a
+mkdir /dev/pts
+mount -t devpts devpts /dev/pts
+
+echo /sbin/mdev > /proc/sys/kernel/hotplug
+mdev -s
+
+if [ -f "/var/lib/alsa/asound.state" ]; then
+	#echo "ALSA: Restoring mixer setting......"
+	#/sbin/alsactl -f /var/lib/alsa/asound.state restore &
+	：
+fi
+echo "BOOTMARK:CONSOLE_READY uptime=$(cut -d' ' -f1 /proc/uptime)" > /dev/console
