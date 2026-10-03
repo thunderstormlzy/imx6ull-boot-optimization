@@ -1,0 +1,96 @@
+diff --git a/drivers/net/phy/realtek.c b/drivers/net/phy/realtek.c
+index 96a0f0fa..d88e1b5a 100644
+--- a/drivers/net/phy/realtek.c
++++ b/drivers/net/phy/realtek.c
+@@ -25,10 +25,31 @@
+ 
+ #define	RTL8211E_INER_LINK_STATUS	0x400
+ 
++/*
++ * RTL8201F interrupt registers.
++ *
++ * Register 0x13 is on page 7.
++ * Register 0x1e is the interrupt status register.
++ * Register 0x1f is the page-select register.
++ */
++#define RTL8201F_ISR			0x1e
++#define RTL8201F_IER			0x13
++#define RTL8201F_PAGE_SELECT		0x1f
++#define RTL8201F_INER_INIT		0x3800
++
+ MODULE_DESCRIPTION("Realtek PHY driver");
+ MODULE_AUTHOR("Johnson Leung");
+ MODULE_LICENSE("GPL");
+ 
++static int rtl8201f_ack_interrupt(struct phy_device *phydev)
++{
++	int err;
++
++	err = phy_read(phydev, RTL8201F_ISR);
++
++	return (err < 0) ? err : 0;
++}
++
+ static int rtl821x_ack_interrupt(struct phy_device *phydev)
+ {
+ 	int err;
+@@ -38,6 +59,31 @@ static int rtl821x_ack_interrupt(struct phy_device *phydev)
+ 	return (err < 0) ? err : 0;
+ }
+ 
++static int rtl8201f_config_intr(struct phy_device *phydev)
++{
++	int err;
++	int ret;
++
++	/* RTL8201F interrupt enable register is on page 7. */
++	err = phy_write(phydev, RTL8201F_PAGE_SELECT, 0x7);
++	if (err < 0)
++		return err;
++
++	if (phydev->interrupts == PHY_INTERRUPT_ENABLED)
++		err = phy_write(phydev, RTL8201F_IER,
++				RTL8201F_INER_INIT);
++	else
++		err = phy_write(phydev, RTL8201F_IER, 0);
++
++	/* Always return to the default page 0. */
++	ret = phy_write(phydev, RTL8201F_PAGE_SELECT, 0x0);
++
++	if (err < 0)
++		return err;
++
++	return ret;
++}
++
+ static int rtl8211b_config_intr(struct phy_device *phydev)
+ {
+ 	int err;
+@@ -85,6 +131,19 @@ static struct phy_driver realtek_drvs[] = {
+ 		.ack_interrupt	= &rtl821x_ack_interrupt,
+ 		.config_intr	= &rtl8211b_config_intr,
+ 		.driver		= { .owner = THIS_MODULE,},
++		}, {
++		.phy_id		= 0x001cc816,
++		.name		= "RTL8201F Fast Ethernet",
++		.phy_id_mask	= 0x001fffff,
++		.features	= PHY_BASIC_FEATURES,
++		.flags		= PHY_HAS_INTERRUPT,
++		.config_aneg	= &genphy_config_aneg,
++		.read_status	= &genphy_read_status,
++		.ack_interrupt	= &rtl8201f_ack_interrupt,
++		.config_intr	= &rtl8201f_config_intr,
++		.suspend	= genphy_suspend,
++		.resume		= genphy_resume,
++		.driver		= { .owner = THIS_MODULE,},
+ 	}, {
+ 		.phy_id		= 0x001cc915,
+ 		.name		= "RTL8211E Gigabit Ethernet",
+@@ -104,6 +163,7 @@ static struct phy_driver realtek_drvs[] = {
+ module_phy_driver(realtek_drvs);
+ 
+ static struct mdio_device_id __maybe_unused realtek_tbl[] = {
++	{ 0x001cc816, 0x001fffff },
+ 	{ 0x001cc912, 0x001fffff },
+ 	{ 0x001cc915, 0x001fffff },
+ 	{ }
