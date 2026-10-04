@@ -1,258 +1,255 @@
-[17-52-13.034]U-Boot 2016.03 (Jul 31 2026 - 17:18:08 +0800)
-[17-52-13.034]
-[17-52-13.034]CPU:   Freescale i.MX6ULL rev1.1 69 MHz (running at 396 MHz)
-[17-52-13.068]CPU:   Industrial temperature grade (-40C to 105C) at 51C
-[17-52-13.068]Reset cause: POR
-[17-52-13.068]Board: MX6ULL EMMC LZY
-[17-52-13.068]I2C:   ready
-[17-52-13.068]DRAM:  512 MiB
-[17-52-13.144]MMC:   FSL_SDHC: 0, FSL_SDHC: 1
-[17-52-13.237]Display: TFT7016 (1024x600)
-[17-52-13.268]Video: 1024x600x24
-[17-52-13.268]In:    serial
-[17-52-13.268]Out:   serial
-[17-52-13.268]Err:   serial
-[17-52-13.344]switch to partitions #0, OK
-[17-52-13.344]mmc0 is current device
-[17-52-13.545]Net:   FEC1
-[17-52-13.545]Normal Boot
-[17-52-14.549]Hit any key to stop autoboot:  0 
-[17-52-14.549]BOOTMARK:TFTP_KERNEL_START
-[17-52-16.695]FEC1 Waiting for PHY auto negotiation to complete..... done
-[17-52-16.796]Using FEC1 device
-[17-52-16.796]TFTP from server 192.168.10.111; our IP address is 192.168.10.11
-[17-52-16.796]Filename 'zImage'.
-[17-52-16.804]Load address: 0x80800000
-[17-52-22.310]Loading: #################################################################
-[17-52-22.664]         #################################################################
-[17-52-23.018]         #################################################################
-[17-52-23.402]         #################################################################
-[17-52-23.772]         #################################################################
-[17-52-24.018]         ##########################################
-[17-52-24.019]         730.5 KiB/s
-[17-52-24.019]done
-[17-52-24.019]Bytes transferred = 5386080 (522f60 hex)
-[17-52-24.019]BOOTMARK:TFTP_KERNEL_END
-[17-52-24.019]BOOTMARK:TFTP_DTB_START
-[17-52-24.119]Using FEC1 device
-[17-52-24.119]TFTP from server 192.168.10.111; our IP address is 192.168.10.11
-[17-52-24.119]Filename 'imx6ull-emmc-lzy.dtb'.
-[17-52-24.126]Load address: 0x83000000
-[17-52-24.149]Loading: ###
-[17-52-24.149]         2.3 MiB/s
-[17-52-24.149]done
-[17-52-24.149]Bytes transferred = 40314 (9d7a hex)
-[17-52-24.149]BOOTMARK:TFTP_DTB_END
-[17-52-24.149]BOOTMARK:KERNEL_START
-[17-52-24.157]Kernel image @ 0x80800000 [ 0x000000 - 0x522f60 ]
-[17-52-24.172]## Flattened Device Tree blob at 83000000
-[17-52-24.172]   Booting using the fdt blob at 0x83000000
-[17-52-24.172]   Using Device Tree in place at 83000000, end 8300cd79
-[17-52-24.187]
-[17-52-24.187]Starting kernel ...
-[17-52-24.187]
-[17-52-25.061]Booting Linux on physical CPU 0x0
-[17-52-25.069]Linux version 4.1.15+ (lzy@lzy) (gcc version 4.9.4 (Linaro GCC 4.9-2017.01) ) #12 SMP PREEMPT Thu Oct 1 20:00:21 CST 2026
-[17-52-25.078]CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c5387d
-[17-52-25.078]CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
-[17-52-25.089]Machine model: Freescale i.MX6 ULL 14x14 EVK Board
-[17-52-25.089]Reserved memory: created CMA memory pool at 0x98000000, size 128 MiB
-[17-52-25.100]Reserved memory: initialized node linux,cma, compatible id shared-dma-pool
-[17-52-25.100]Memory policy: Data cache writealloc
-[17-52-25.109]PERCPU: Embedded 12 pages/cpu @97b8f000 s16768 r8192 d24192 u49152
-[17-52-25.120]Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 130048
-[17-52-25.131]Kernel command line: console=tty1 console=ttymxc0,115200 root=/dev/nfs rw nfsroot=192.168.10.111:/home/lzy/linux/nfs/rootfs,proto=tcp,nfsvers=3 ip=192.168.10.11:192.168.10.111:192.168.10.1:255.255.255.0::eth0:off
-[17-52-25.140]PID hash table entries: 2048 (order: 1, 8192 bytes)
-[17-52-25.140]Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
-[17-52-25.151]Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
-[17-52-25.162]Memory: 378088K/524288K available (6714K kernel code, 302K rwdata, 2252K rodata, 432K init, 424K bss, 15128K reserved, 131072K cma-reserved, 0K highmem)
-[17-52-25.170]Virtual kernel memory layout:
-[17-52-25.170]    vector  : 0xffff0000 - 0xffff1000   (   4 kB)
-[17-52-25.170]    fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
-[17-52-25.181]    vmalloc : 0xa0800000 - 0xff000000   (1512 MB)
-[17-52-25.181]    lowmem  : 0x80000000 - 0xa0000000   ( 512 MB)
-[17-52-25.193]    pkmap   : 0x7fe00000 - 0x80000000   (   2 MB)
-[17-52-25.193]    modules : 0x7f000000 - 0x7fe00000   (  14 MB)
-[17-52-25.201]      .text : 0x80008000 - 0x808c9d44   (8968 kB)
-[17-52-25.201]      .init : 0x808ca000 - 0x80936000   ( 432 kB)
-[17-52-25.201]      .data : 0x80936000 - 0x80981940   ( 303 kB)
-[17-52-25.212]       .bss : 0x80984000 - 0x809ee174   ( 425 kB)
-[17-52-25.212]SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
-[17-52-25.223]Preemptible hierarchical RCU implementation.
-[17-52-25.223]        Additional per-CPU info printed with stalls.
-[17-52-25.223]        RCU restricting CPUs from NR_CPUS=4 to nr_cpu_ids=1.
-[17-52-25.235]RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
-[17-52-25.235]NR_IRQS:16 nr_irqs:16 16
-[17-52-25.235]mxc_clocksource_init 3000000
-[17-52-25.246]Switching to timer-based delay loop, resolution 333ns
-[17-52-25.246]sched_clock: 32 bits at 3000kHz, resolution 333ns, wraps every 715827882841ns
-[17-52-25.257]clocksource mxc_timer1: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 637086815595 ns
-[17-52-25.257]Console: colour dummy device 80x30
-[17-52-25.268]console [tty1] enabled
-[17-52-25.277]Calibrating delay loop (skipped), value calculated using timer frequency.. 6.00 BogoMIPS (lpj=30000)
-[17-52-25.277]pid_max: default: 32768 minimum: 301
-[17-52-25.277]Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
-[17-52-25.288]Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
-[17-52-25.288]CPU: Testing write buffer coherency: ok
-[17-52-25.299]/cpus/cpu@0 missing clock-frequency property
-[17-52-25.299]CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
-[17-52-25.299]Setting up static identity map for 0x80008280 - 0x800082d8
-[17-52-25.311]Brought up 1 CPUs
-[17-52-25.311]SMP: Total of 1 processors activated (6.00 BogoMIPS).
-[17-52-25.311]CPU: All CPU(s) started in SVC mode.
-[17-52-25.315]devtmpfs: initialized
-[17-52-25.324]device-tree: Duplicate name in lcdif@021c8000, renamed to "display#1"
-[17-52-25.324]VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
-[17-52-25.336]clocksource jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
-[17-52-25.346]pinctrl core: initialized pinctrl subsystem
-[17-52-25.346]NET: Registered protocol family 16
-[17-52-25.355]DMA: preallocated 256 KiB pool for atomic coherent allocations
-[17-52-25.355]cpuidle: using governor ladder
-[17-52-25.355]cpuidle: using governor menu
-[17-52-25.366]hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
-[17-52-25.366]hw-breakpoint: maximum watchpoint size is 8 bytes.
-[17-52-25.377]imx6ul-pinctrl 20e0000.iomuxc: initialized IMX pinctrl driver
-[17-52-25.377]imx6ul-pinctrl 2290000.iomuxc-snvs: initialized IMX pinctrl driver
-[17-52-25.386]mxs-dma 1804000.dma-apbh: initialized
-[17-52-25.386]SCSI subsystem initialized
-[17-52-25.386]usbcore: registered new interface driver usbfs
-[17-52-25.397]usbcore: registered new interface driver hub
-[17-52-25.397]usbcore: registered new device driver usb
-[17-52-25.397]i2c i2c-0: IMX I2C adapter registered
-[17-52-25.397]i2c i2c-0: can't use DMA
-[17-52-25.408]i2c i2c-1: IMX I2C adapter registered
-[17-52-25.408]i2c i2c-1: can't use DMA
-[17-52-25.408]Linux video capture interface: v2.00
-[17-52-25.417]pps_core: LinuxPPS API ver. 1 registered
-[17-52-25.429]pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
-[17-52-25.429]PTP clock support registered
-[17-52-25.429]Switched to clocksource mxc_timer1
-[17-52-25.429]NET: Registered protocol family 2
-[17-52-25.439]TCP established hash table entries: 4096 (order: 2, 16384 bytes)
-[17-52-25.451]TCP bind hash table entries: 4096 (order: 3, 32768 bytes)
-[17-52-25.451]TCP: Hash tables configured (established 4096 bind 4096)
-[17-52-25.451]UDP hash table entries: 256 (order: 1, 8192 bytes)
-[17-52-25.459]UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
-[17-52-25.459]NET: Registered protocol family 1
-[17-52-25.470]RPC: Registered named UNIX socket transport module.
-[17-52-25.470]RPC: Registered udp transport module.
-[17-52-25.470]RPC: Registered tcp transport module.
-[17-52-25.479]RPC: Registered tcp NFSv4.1 backchannel transport module.
-[17-52-25.479]imx rpmsg driver is registered.
-[17-52-25.479]Bus freq driver module loaded
-[17-52-25.490]futex hash table entries: 256 (order: 2, 16384 bytes)
-[17-52-25.490]VFS: Disk quotas dquot_6.6.0
-[17-52-25.500]VFS: Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
-[17-52-25.500]NFS: Registering the id_resolver key type
-[17-52-25.500]Key type id_resolver registered
-[17-52-25.509]Key type id_legacy registered
-[17-52-25.509]jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
-[17-52-25.509]fuse init (API version 7.23)
-[17-52-25.521]io scheduler noop registered
-[17-52-25.521]io scheduler deadline registered
-[17-52-25.521]io scheduler cfq registered (default)
-[17-52-25.521]imx-weim 21b8000.weim: Driver registered.
-[17-52-25.532]backlight supply power not found, using dummy regulator
-[17-52-25.540]21c8000.lcdif supply lcd not found, using dummy regulator
-[17-52-25.540]mxsfb 21c8000.lcdif: failed to find mxc display driver 
-[17-52-25.540]Console: switching to colour frame buffer device 128x37
-[17-52-25.552]mxsfb 21c8000.lcdif: initialized
-[17-52-25.552]imx-sdma 20ec000.sdma: no event needs to be remapped
-[17-52-25.552]imx-sdma 20ec000.sdma: loaded firmware 3.3
-[17-52-25.562]imx-sdma 20ec000.sdma: initialized
-[17-52-25.575]2020000.serial: ttymxc0 at MMIO 0x2020000 (irq = 19, base_baud = 5000000) is a IMX
-[17-52-25.575]console [ttymxc0] enabled
-[17-52-25.578]21ec000.serial: ttymxc2 at MMIO 0x21ec000 (irq = 228, base_baud = 5000000) is a IMX
-[17-52-25.594]imx sema4 driver is registered.
-[17-52-25.594][drm] Initialized drm 1.1.0 20060810
-[17-52-25.609][drm] Initialized vivante 1.0.0 20120216 on minor 0
-[17-52-25.639]brd: module loaded
-[17-52-25.654]loop: module loaded
-[17-52-25.670]spi_imx 2010000.ecspi: probed
-[17-52-25.686]20b4000.ethernet supply phy not found, using dummy regulator
-[17-52-26.056]pps pps0: new PPS source ptp0
-[17-52-26.082]libphy: fec_enet_mii_bus: probed
-[17-52-26.082]fec 20b4000.ethernet eth0: registered PHC device 0
-[17-52-26.103]ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
-[17-52-26.103]ehci-mxc: Freescale On-Chip EHCI Host driver
-[17-52-26.103]ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
-[17-52-26.124]usbcore: registered new interface driver usb-storage
-[17-52-26.124]2184800.usbmisc supply vbus-wakeup not found, using dummy regulator
-[17-52-26.134]2184000.usb supply vbus not found, using dummy regulator
-[17-52-26.149]2184200.usb supply vbus not found, using dummy regulator
-[17-52-26.181]ci_hdrc ci_hdrc.1: EHCI Host Controller
-[17-52-26.181]ci_hdrc ci_hdrc.1: new USB bus registered, assigned bus number 1
-[17-52-26.196]ci_hdrc ci_hdrc.1: USB 2.0 started, EHCI 1.00
-[17-52-26.212]hub 1-0:1.0: USB hub found
-[17-52-26.212]hub 1-0:1.0: 1 port detected
-[17-52-26.227]mousedev: PS/2 mouse device common for all mice
-[17-52-26.243]input: 20cc000.snvs:snvs-powerkey as /devices/platform/soc/2000000.aips-bus/20cc000.snvs/20cc000.snvs:snvs-powerkey/input/input0
-[17-52-26.536]usb 1-1: new high-speed USB device number 2 using ci_hdrc
-[17-52-26.581]input: edt-ft5426 as /devices/platform/soc/2100000.aips-bus/21a4000.i2c/i2c-1/1-0038/input/input1
-[17-52-26.610]snvs_rtc 20cc000.snvs:snvs-rtc-lp: rtc core: registered 20cc000.snvs:snvs-r as rtc0
-[17-52-26.610]i2c /dev entries driver
-[17-52-26.610]IR NEC protocol handler initialized
-[17-52-26.610]IR RC5(x/sz) protocol handler initialized
-[17-52-26.630]IR RC6 protocol handler initialized
-[17-52-26.630]IR JVC protocol handler initialized
-[17-52-26.630]IR Sony protocol handler initialized
-[17-52-26.646]IR SANYO protocol handler initialized
-[17-52-26.646]IR Sharp protocol handler initialized
-[17-52-26.660]IR MCE Keyboard/mouse protocol handler initialized
-[17-52-26.660]IR XMP protocol handler initialized
-[17-52-26.675]pxp-v4l2 pxp_v4l2: initialized
-[17-52-26.675]imx2-wdt 20bc000.wdog: use WDOG_B to reboot.
-[17-52-26.690]imx2-wdt 20bc000.wdog: timeout 60 sec (nowayout=0)
-[17-52-26.690]hub 1-1:1.0: USB hub found
-[17-52-26.705]sdhci: Secure Digital Host Controller Interface driver
-[17-52-26.705]sdhci: Copyright(c) Pierre Ossman
-[17-52-26.721]hub 1-1:1.0: 4 ports detected
-[17-52-26.721]sdhci-pltfm: SDHCI platform and OF driver helper
-[17-52-26.737]/soc/aips-bus@02100000/usdhc@02190000: voltage-ranges unspecified
-[17-52-26.737]sdhci-esdhc-imx 2190000.usdhc: Got CD GPIO
-[17-52-26.751]sdhci-esdhc-imx 2190000.usdhc: No vqmmc regulator found
-[17-52-26.798]mmc0: SDHCI controller on 2190000.usdhc [2190000.usdhc] using ADMA
-[17-52-26.829]/soc/aips-bus@02100000/usdhc@02194000: voltage-ranges unspecified
-[17-52-26.844]sdhci-esdhc-imx 2194000.usdhc: No vmmc regulator found
-[17-52-26.844]sdhci-esdhc-imx 2194000.usdhc: No vqmmc regulator found
-[17-52-26.891]mmc0: host does not support reading read-only switch, assuming write-enable
-[17-52-26.921]mmc1: SDHCI controller on 2194000.usdhc [2194000.usdhc] using ADMA
-[17-52-26.921]mmc0: new high speed SDHC card at address 0001
-[17-52-26.921]usbcore: registered new interface driver usbhid
-[17-52-26.952]mmcblk0: mmc0:0001 SD 29.1 GiB 
-[17-52-26.952]usbhid: USB HID core driver
-[17-52-26.952] mmcblk0: p1
-[17-52-26.952]NET: Registered protocol family 10
-[17-52-26.967]sit: IPv6 over IPv4 tunneling driver
-[17-52-26.982]NET: Registered protocol family 17
-[17-52-26.982]lib80211: common routines for IEEE802.11 drivers
-[17-52-26.997]Key type dns_resolver registered
-[17-52-27.044]Registering SWP/SWPB emulation handler
-[17-52-27.060]snvs_rtc 20cc000.snvs:snvs-rtc-lp: setting system clock to 1970-01-01 00:21:37 UTC (1297)
-[17-52-27.076]mmc1: MAN_BKOPS_EN bit is not set
-[17-52-27.091]fec 20b4000.ethernet eth0: Freescale FEC PHY driver [RTL8201F Fast Ethernet] (mii_bus:phy_addr=20b4000.ethernet:01, irq=169)
-[17-52-27.107]mmc1: new DDR MMC card at address 0001
-[17-52-27.122]mmcblk1: mmc1:0001 8GTF4R 7.28 GiB 
-[17-52-27.122]IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
-[17-52-27.138]mmcblk1boot0: mmc1:0001 8GTF4R partition 1 4.00 MiB
-[17-52-27.138]mmcblk1boot1: mmc1:0001 8GTF4R partition 2 4.00 MiB
-[17-52-27.138]mmcblk1rpmb: mmc1:0001 8GTF4R partition 3 512 KiB
-[17-52-27.153] mmcblk1: p1 p2
-[17-52-30.874]fec 20b4000.ethernet eth0: Link is Up - 100Mbps/Full - flow control rx/tx
-[17-52-30.874]IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
-[17-52-30.894]IP-Config: Complete:
-[17-52-30.894]     device=eth0, hwaddr=b8:ae:1d:01:00:00, ipaddr=192.168.10.11, mask=255.255.255.0, gw=192.168.10.1
-[17-52-30.909]     host=192.168.10.11, domain=, nis-domain=(none)
-[17-52-30.909]     bootserver=192.168.10.111, rootserver=192.168.10.111, rootpath=
-[17-52-30.920]can-3v3: disabling
-[17-52-31.941]VFS: Mounted root (nfs filesystem) on device 0:14.
-[17-52-31.941]devtmpfs: mounted
-[17-52-31.941]Freeing unused kernel memory: 432K (808ca000 - 80936000)
-[17-52-32.232]cut: /proc/uptime: No such file or directory
-[17-52-32.232]BOOTMARK:USERSPACE_START uptime=
-[17-52-32.447]/etc/init.d/rcS: line 18: ：: not found
-[17-52-32.479]BOOTMARK:CONSOLE_READY uptime=7.94
-[17-52-32.479]
-[17-53-52.064]Please press Enter to activate this console. random: nonblocking pool is initialized
-[17-57-58.964]
-[17-57-58.964]
+[13-09-58.147]U-Boot 2016.03 (Jul 31 2026 - 17:18:08 +0800)
+[13-09-58.147]
+[13-09-58.147]CPU:   Freescale i.MX6ULL rev1.1 69 MHz (running at 396 MHz)
+[13-09-58.179]CPU:   Industrial temperature grade (-40C to 105C) at 49C
+[13-09-58.179]Reset cause: POR
+[13-09-58.179]Board: MX6ULL EMMC LZY
+[13-09-58.179]I2C:   ready
+[13-09-58.179]DRAM:  512 MiB
+[13-09-58.255]MMC:   FSL_SDHC: 0, FSL_SDHC: 1
+[13-09-58.349]Display: TFT7016 (1024x600)
+[13-09-58.364]Video: 1024x600x24
+[13-09-58.364]In:    serial
+[13-09-58.364]Out:   serial
+[13-09-58.380]Err:   serial
+[13-09-58.471]switch to partitions #0, OK
+[13-09-58.471]mmc0 is current device
+[13-09-58.657]Net:   FEC1
+[13-09-58.657]Normal Boot
+[13-09-59.661]Hit any key to stop autoboot:  0 
+[13-09-59.661]BOOTMARK:TFTP_KERNEL_START
+[13-10-02.264]FEC1 Waiting for PHY auto negotiation to complete...... done
+[13-10-02.360]Using FEC1 device
+[13-10-02.360]TFTP from server 192.168.10.111; our IP address is 192.168.10.11
+[13-10-02.360]Filename 'zImage'.
+[13-10-02.372]Load address: 0x80800000
+[13-10-08.131]Loading: #################################################################
+[13-10-08.563]         #################################################################
+[13-10-09.010]         #################################################################
+[13-10-09.441]         #################################################################
+[13-10-09.843]         #################################################################
+[13-10-10.092]         ##########################################
+[13-10-10.092]         680.7 KiB/s
+[13-10-10.092]done
+[13-10-10.092]Bytes transferred = 5386080 (522f60 hex)
+[13-10-10.107]BOOTMARK:TFTP_KERNEL_END
+[13-10-10.107]BOOTMARK:TFTP_DTB_START
+[13-10-10.199]Using FEC1 device
+[13-10-10.215]TFTP from server 192.168.10.111; our IP address is 192.168.10.11
+[13-10-10.215]Filename 'imx6ull-emmc-lzy.dtb'.
+[13-10-10.215]Load address: 0x83000000
+[13-10-10.243]Loading: ###
+[13-10-10.243]         1.5 MiB/s
+[13-10-10.243]done
+[13-10-10.243]Bytes transferred = 40314 (9d7a hex)
+[13-10-10.243]BOOTMARK:TFTP_DTB_END
+[13-10-10.243]BOOTMARK:KERNEL_START
+[13-10-10.255]Kernel image @ 0x80800000 [ 0x000000 - 0x522f60 ]
+[13-10-10.255]## Flattened Device Tree blob at 83000000
+[13-10-10.255]   Booting using the fdt blob at 0x83000000
+[13-10-10.293]   Using Device Tree in place at 83000000, end 8300cd79
+[13-10-10.293]
+[13-10-10.293]Starting kernel ...
+[13-10-10.293]
+[13-10-11.165]Booting Linux on physical CPU 0x0
+[13-10-11.176]Linux version 4.1.15+ (lzy@lzy) (gcc version 4.9.4 (Linaro GCC 4.9-2017.01) ) #12 SMP PREEMPT Thu Oct 1 20:00:21 CST 2026
+[13-10-11.177]CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c5387d
+[13-10-11.186]CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[13-10-11.187]Machine model: Freescale i.MX6 ULL 14x14 EVK Board
+[13-10-11.196]Reserved memory: created CMA memory pool at 0x98000000, size 128 MiB
+[13-10-11.207]Reserved memory: initialized node linux,cma, compatible id shared-dma-pool
+[13-10-11.207]Memory policy: Data cache writealloc
+[13-10-11.207]PERCPU: Embedded 12 pages/cpu @97b8f000 s16768 r8192 d24192 u49152
+[13-10-11.218]Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 130048
+[13-10-11.238]Kernel command line: console=tty1 console=ttymxc0,115200 root=/dev/nfs rw nfsroot=192.168.10.111:/home/lzy/linux/nfs/rootfs,proto=tcp,nfsvers=3 ip=192.168.10.11:192.168.10.111:192.168.10.1:255.255.255.0::eth0:off
+[13-10-11.238]PID hash table entries: 2048 (order: 1, 8192 bytes)
+[13-10-11.249]Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+[13-10-11.257]Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[13-10-11.268]Memory: 378088K/524288K available (6714K kernel code, 302K rwdata, 2252K rodata, 432K init, 424K bss, 15128K reserved, 131072K cma-reserved, 0K highmem)
+[13-10-11.268]Virtual kernel memory layout:
+[13-10-11.268]    vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[13-10-11.283]    fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+[13-10-11.288]    vmalloc : 0xa0800000 - 0xff000000   (1512 MB)
+[13-10-11.288]    lowmem  : 0x80000000 - 0xa0000000   ( 512 MB)
+[13-10-11.288]    pkmap   : 0x7fe00000 - 0x80000000   (   2 MB)
+[13-10-11.299]    modules : 0x7f000000 - 0x7fe00000   (  14 MB)
+[13-10-11.299]      .text : 0x80008000 - 0x808c9d44   (8968 kB)
+[13-10-11.311]      .init : 0x808ca000 - 0x80936000   ( 432 kB)
+[13-10-11.311]      .data : 0x80936000 - 0x80981940   ( 303 kB)
+[13-10-11.318]       .bss : 0x80984000 - 0x809ee174   ( 425 kB)
+[13-10-11.319]SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[13-10-11.319]Preemptible hierarchical RCU implementation.
+[13-10-11.330]        Additional per-CPU info printed with stalls.
+[13-10-11.330]        RCU restricting CPUs from NR_CPUS=4 to nr_cpu_ids=1.
+[13-10-11.341]RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[13-10-11.341]NR_IRQS:16 nr_irqs:16 16
+[13-10-11.341]mxc_clocksource_init 3000000
+[13-10-11.350]Switching to timer-based delay loop, resolution 333ns
+[13-10-11.350]sched_clock: 32 bits at 3000kHz, resolution 333ns, wraps every 715827882841ns
+[13-10-11.361]clocksource mxc_timer1: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 637086815595 ns
+[13-10-11.361]Console: colour dummy device 80x30
+[13-10-11.372]console [tty1] enabled
+[13-10-11.380]Calibrating delay loop (skipped), value calculated using timer frequency.. 6.00 BogoMIPS (lpj=30000)
+[13-10-11.380]pid_max: default: 32768 minimum: 301
+[13-10-11.380]Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[13-10-11.391]Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[13-10-11.391]CPU: Testing write buffer coherency: ok
+[13-10-11.403]/cpus/cpu@0 missing clock-frequency property
+[13-10-11.403]CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[13-10-11.411]Setting up static identity map for 0x80008280 - 0x800082d8
+[13-10-11.411]Brought up 1 CPUs
+[13-10-11.411]SMP: Total of 1 processors activated (6.00 BogoMIPS).
+[13-10-11.422]CPU: All CPU(s) started in SVC mode.
+[13-10-11.422]devtmpfs: initialized
+[13-10-11.422]device-tree: Duplicate name in lcdif@021c8000, renamed to "display#1"
+[13-10-11.434]VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
+[13-10-11.446]clocksource jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[13-10-11.446]pinctrl core: initialized pinctrl subsystem
+[13-10-11.446]NET: Registered protocol family 16
+[13-10-11.459]DMA: preallocated 256 KiB pool for atomic coherent allocations
+[13-10-11.459]cpuidle: using governor ladder
+[13-10-11.459]cpuidle: using governor menu
+[13-10-11.470]hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[13-10-11.470]hw-breakpoint: maximum watchpoint size is 8 bytes.
+[13-10-11.481]imx6ul-pinctrl 20e0000.iomuxc: initialized IMX pinctrl driver
+[13-10-11.481]imx6ul-pinctrl 2290000.iomuxc-snvs: initialized IMX pinctrl driver
+[13-10-11.490]mxs-dma 1804000.dma-apbh: initialized
+[13-10-11.490]SCSI subsystem initialized
+[13-10-11.490]usbcore: registered new interface driver usbfs
+[13-10-11.501]usbcore: registered new interface driver hub
+[13-10-11.501]usbcore: registered new device driver usb
+[13-10-11.501]i2c i2c-0: IMX I2C adapter registered
+[13-10-11.501]i2c i2c-0: can't use DMA
+[13-10-11.512]i2c i2c-1: IMX I2C adapter registered
+[13-10-11.512]i2c i2c-1: can't use DMA
+[13-10-11.512]Linux video capture interface: v2.00
+[13-10-11.523]pps_core: LinuxPPS API ver. 1 registered
+[13-10-11.523]pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[13-10-11.535]PTP clock support registered
+[13-10-11.535]Switched to clocksource mxc_timer1
+[13-10-11.535]NET: Registered protocol family 2
+[13-10-11.546]TCP established hash table entries: 4096 (order: 2, 16384 bytes)
+[13-10-11.546]TCP bind hash table entries: 4096 (order: 3, 32768 bytes)
+[13-10-11.546]TCP: Hash tables configured (established 4096 bind 4096)
+[13-10-11.557]UDP hash table entries: 256 (order: 1, 8192 bytes)
+[13-10-11.565]UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[13-10-11.565]NET: Registered protocol family 1
+[13-10-11.565]RPC: Registered named UNIX socket transport module.
+[13-10-11.576]RPC: Registered udp transport module.
+[13-10-11.576]RPC: Registered tcp transport module.
+[13-10-11.576]RPC: Registered tcp NFSv4.1 backchannel transport module.
+[13-10-11.588]imx rpmsg driver is registered.
+[13-10-11.589]Bus freq driver module loaded
+[13-10-11.596]futex hash table entries: 256 (order: 2, 16384 bytes)
+[13-10-11.596]VFS: Disk quotas dquot_6.6.0
+[13-10-11.596]VFS: Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[13-10-11.607]NFS: Registering the id_resolver key type
+[13-10-11.608]Key type id_resolver registered
+[13-10-11.608]Key type id_legacy registered
+[13-10-11.618]jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[13-10-11.619]fuse init (API version 7.23)
+[13-10-11.619]io scheduler noop registered
+[13-10-11.627]io scheduler deadline registered
+[13-10-11.627]io scheduler cfq registered (default)
+[13-10-11.627]imx-weim 21b8000.weim: Driver registered.
+[13-10-11.634]backlight supply power not found, using dummy regulator
+[13-10-11.644]21c8000.lcdif supply lcd not found, using dummy regulator
+[13-10-11.644]mxsfb 21c8000.lcdif: failed to find mxc display driver 
+[13-10-11.644]Console: switching to colour frame buffer device 128x37
+[13-10-11.650]mxsfb 21c8000.lcdif: initialized
+[13-10-11.658]imx-sdma 20ec000.sdma: no event needs to be remapped
+[13-10-11.658]imx-sdma 20ec000.sdma: loaded firmware 3.3
+[13-10-11.666]imx-sdma 20ec000.sdma: initialized
+[13-10-11.679]2020000.serial: ttymxc0 at MMIO 0x2020000 (irq = 19, base_baud = 5000000) is a IMX
+[13-10-11.679]console [ttymxc0] enabled
+[13-10-11.695]21ec000.serial: ttymxc2 at MMIO 0x21ec000 (irq = 228, base_baud = 5000000) is a IMX
+[13-10-11.695]imx sema4 driver is registered.
+[13-10-11.695][drm] Initialized drm 1.1.0 20060810
+[13-10-11.711][drm] Initialized vivante 1.0.0 20120216 on minor 0
+[13-10-11.741]brd: module loaded
+[13-10-11.757]loop: module loaded
+[13-10-11.772]spi_imx 2010000.ecspi: probed
+[13-10-11.788]20b4000.ethernet supply phy not found, using dummy regulator
+[13-10-12.159]pps pps0: new PPS source ptp0
+[13-10-12.175]libphy: fec_enet_mii_bus: probed
+[13-10-12.191]fec 20b4000.ethernet eth0: registered PHC device 0
+[13-10-12.191]ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[13-10-12.207]ehci-mxc: Freescale On-Chip EHCI Host driver
+[13-10-12.207]ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[13-10-12.221]usbcore: registered new interface driver usb-storage
+[13-10-12.237]2184800.usbmisc supply vbus-wakeup not found, using dummy regulator
+[13-10-12.238]2184000.usb supply vbus not found, using dummy regulator
+[13-10-12.253]2184200.usb supply vbus not found, using dummy regulator
+[13-10-12.283]ci_hdrc ci_hdrc.1: EHCI Host Controller
+[13-10-12.283]ci_hdrc ci_hdrc.1: new USB bus registered, assigned bus number 1
+[13-10-12.299]ci_hdrc ci_hdrc.1: USB 2.0 started, EHCI 1.00
+[13-10-12.314]hub 1-0:1.0: USB hub found
+[13-10-12.314]hub 1-0:1.0: 1 port detected
+[13-10-12.330]mousedev: PS/2 mouse device common for all mice
+[13-10-12.346]input: 20cc000.snvs:snvs-powerkey as /devices/platform/soc/2000000.aips-bus/20cc000.snvs/20cc000.snvs:snvs-powerkey/input/input0
+[13-10-12.641]usb 1-1: new high-speed USB device number 2 using ci_hdrc
+[13-10-12.679]input: edt-ft5426 as /devices/platform/soc/2100000.aips-bus/21a4000.i2c/i2c-1/1-0038/input/input1
+[13-10-12.707]snvs_rtc 20cc000.snvs:snvs-rtc-lp: rtc core: registered 20cc000.snvs:snvs-r as rtc0
+[13-10-12.707]i2c /dev entries driver
+[13-10-12.707]IR NEC protocol handler initialized
+[13-10-12.719]IR RC5(x/sz) protocol handler initialized
+[13-10-12.719]IR RC6 protocol handler initialized
+[13-10-12.740]IR JVC protocol handler initialized
+[13-10-12.740]IR Sony protocol handler initialized
+[13-10-12.740]IR SANYO protocol handler initialized
+[13-10-12.763]IR Sharp protocol handler initialized
+[13-10-12.763]IR MCE Keyboard/mouse protocol handler initialized
+[13-10-12.763]IR XMP protocol handler initialized
+[13-10-12.790]pxp-v4l2 pxp_v4l2: initialized
+[13-10-12.790]imx2-wdt 20bc000.wdog: use WDOG_B to reboot.
+[13-10-12.790]imx2-wdt 20bc000.wdog: timeout 60 sec (nowayout=0)
+[13-10-12.812]hub 1-1:1.0: USB hub found
+[13-10-12.812]sdhci: Secure Digital Host Controller Interface driver
+[13-10-12.812]sdhci: Copyright(c) Pierre Ossman
+[13-10-12.827]hub 1-1:1.0: 4 ports detected
+[13-10-12.827]sdhci-pltfm: SDHCI platform and OF driver helper
+[13-10-12.842]/soc/aips-bus@02100000/usdhc@02190000: voltage-ranges unspecified
+[13-10-12.842]sdhci-esdhc-imx 2190000.usdhc: Got CD GPIO
+[13-10-12.857]sdhci-esdhc-imx 2190000.usdhc: No vqmmc regulator found
+[13-10-12.903]mmc0: SDHCI controller on 2190000.usdhc [2190000.usdhc] using ADMA
+[13-10-12.919]/soc/aips-bus@02100000/usdhc@02194000: voltage-ranges unspecified
+[13-10-12.950]sdhci-esdhc-imx 2194000.usdhc: No vmmc regulator found
+[13-10-12.950]sdhci-esdhc-imx 2194000.usdhc: No vqmmc regulator found
+[13-10-12.995]mmc0: host does not support reading read-only switch, assuming write-enable
+[13-10-13.012]mmc1: SDHCI controller on 2194000.usdhc [2194000.usdhc] using ADMA
+[13-10-13.012]mmc0: new high speed SDHC card at address 0001
+[13-10-13.043]usbcore: registered new interface driver usbhid
+[13-10-13.043]mmcblk0: mmc0:0001 SD 29.1 GiB 
+[13-10-13.043]usbhid: USB HID core driver
+[13-10-13.043] mmcblk0: p1
+[13-10-13.073]NET: Registered protocol family 10
+[13-10-13.073]sit: IPv6 over IPv4 tunneling driver
+[13-10-13.089]NET: Registered protocol family 17
+[13-10-13.089]lib80211: common routines for IEEE802.11 drivers
+[13-10-13.103]Key type dns_resolver registered
+[13-10-13.149]Registering SWP/SWPB emulation handler
+[13-10-13.166]snvs_rtc 20cc000.snvs:snvs-rtc-lp: setting system clock to 1970-01-01 00:11:16 UTC (676)
+[13-10-13.181]mmc1: MAN_BKOPS_EN bit is not set
+[13-10-13.197]fec 20b4000.ethernet eth0: Freescale FEC PHY driver [RTL8201F Fast Ethernet] (mii_bus:phy_addr=20b4000.ethernet:01, irq=169)
+[13-10-13.220]mmc1: new DDR MMC card at address 0001
+[13-10-13.220]mmcblk1: mmc1:0001 8GTF4R 7.28 GiB 
+[13-10-13.236]IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[13-10-13.236]mmcblk1boot0: mmc1:0001 8GTF4R partition 1 4.00 MiB
+[13-10-13.236]mmcblk1boot1: mmc1:0001 8GTF4R partition 2 4.00 MiB
+[13-10-13.243]mmcblk1rpmb: mmc1:0001 8GTF4R partition 3 512 KiB
+[13-10-13.258] mmcblk1: p1 p2
+[13-10-16.871]fec 20b4000.ethernet eth0: Link is Up - 100Mbps/Full - flow control rx/tx
+[13-10-16.871]IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[13-10-16.886]IP-Config: Complete:
+[13-10-16.897]     device=eth0, hwaddr=b8:ae:1d:01:00:00, ipaddr=192.168.10.11, mask=255.255.255.0, gw=192.168.10.1
+[13-10-16.917]     host=192.168.10.11, domain=, nis-domain=(none)
+[13-10-16.917]     bootserver=192.168.10.111, rootserver=192.168.10.111, rootpath=
+[13-10-16.917]can-3v3: disabling
+[13-10-17.954]VFS: Mounted root (nfs filesystem) on device 0:14.
+[13-10-17.954]devtmpfs: mounted
+[13-10-17.954]Freeing unused kernel memory: 432K (808ca000 - 80936000)
+[13-10-18.539]BOOTMARK:USERSPACE_START
+[13-10-18.540]BOOTMARK:CONSOLE_READY
+[13-10-18.570]
+[13-11-02.705]Please press Enter to activate this console. 
+[13-11-02.705]
