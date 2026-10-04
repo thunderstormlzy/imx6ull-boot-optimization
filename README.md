@@ -42,15 +42,15 @@ BOOTMARK:CONSOLE_READY
 测试数据目录：
 
 ```text
-输出日志/baseline/001.log ... 030.log
-输出日志/optimize/001.log ... 030.log
+logs/baseline/001.log ... 030.log
+logs/optimize/001.log ... 030.log
 ```
 
 两组数据均为30/30次成功启动。
 
 ## 优化前基线
 
-以下数据由 `输出日志/baseline/001.log` 至 `030.log` 逐份提取，单位为秒。
+以下数据由 `logs/baseline/001.log` 至 `030.log` 逐份提取，单位为秒。
 
 | 指标 | 平均值 | 中位数 | 最小值 | 最大值 |
 | --- | ---: | ---: | ---: | ---: |
@@ -97,7 +97,7 @@ NFS启动只使用 `20b4000.ethernet` 对应的 eth0，关闭未使用的 FEC1/e
 
 ## 优化后 30 次结果
 
-以下数据由 `输出日志/optimize/001.log` 至 `030.log` 逐份提取，单位为秒。原始日志包含34次完整启动，本项目取前30次作为正式优化数据。
+以下数据由 `logs/optimize/001.log` 至 `030.log` 逐份提取，单位为秒。
 
 | 指标 | 平均值 | 中位数 | 最小值 | 最大值 |
 | --- | ---: | ---: | ---: | ---: |
@@ -157,8 +157,8 @@ U-Boot 等待阶段从3.574秒降至1.652秒，减少1.922秒；Linux 内核标�
 逐次统计文件：
 
 ```text
-输出日志/baseline-summary.csv
-输出日志/optimize-summary.csv
+results/baseline-summary.csv
+results/optimize-summary.csv
 ```
 
 启动测试条件：
